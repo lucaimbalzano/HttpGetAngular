@@ -1,30 +1,35 @@
-<p>table works!</p>
-<table class="table table-hover table-light">
-  <thead>
-    <th>id</th>
-    <th>name</th>
-    <th>surname</th>
-    <th>email</th>
-    <th>address</th>
-    <th>suite</th>
-    <th>city</th>
-    <th>zipcode</th>
-    <th>latitude</th>
-    <th>longitude</th>
-  </thead>
-  <tbody>
-    <tr *ngFor="let user of users">
-      <td>{{ user.id }}</td>
-      <td>{{ user.name }}</td>
-      <td>{{ user.surname }}</td>
-      <td>{{ user.email }}</td>
-      <td>{{ user.address.street }}</td>
-      <td>{{ user.address.suite }}</td>
-      <td>{{ user.address.city }}</td>
-      <td>{{ user.address.zipcode }}</td>
-      <td>{{ user.address.geo.lat }}</td>
-      <td>{{ user.address.geo.lng }}</td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
+<div class="row">
+  <div class="col"></div>
+  <div class="col">
+    <table class="mt-5 table table-hover table-light">
+      <thead class="table table-hover table-primary">
+        <tr>
+          <th class="col">id</th>
+          <th class="col">name surname</th>
+          <th class="col"></th>
+          <th class="col">email</th>
+          <th class="col">address</th>
+          <th class="col">suite</th>
+          <th class="col">city</th>
+          <th class="col">zipcode</th>
+          <th class="col">latitude</th>
+          <th class="col">longitude</th>
+        </tr>
+      </thead>
+      <tbody class="table table-hover table-light">
+        <tr *ngFor="let user of users">
+          <th scope="row">{{ user.id }}</th>
+          <td class="col">{{ user.name }}</td>
+          <td class="col">{{ user.surname }}</td>
+          <td class="col">{{ user.email }}</td>
+          <td class="col">{{ user.address.street }}</td>
+          <td class="col">{{ user.address.suite }}</td>
+          <td class="col">{{ user.address.city }}</td>
+          <td class="col">{{ user.address.zipcode }}</td>
+          <td class="col">{{ user.address.geo.lat }}</td>
+          <td class="col">{{ user.address.geo.lng }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
