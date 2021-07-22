@@ -1,12 +1,13 @@
 <div class="row">
   <div class="col">
     <!-- FORM FOR ADD  -->
-    <form class="m-5" [formGroup]="formValue">
+    <form class="m-5" (ngSubmit)="createUser()">
       <h3>Add an User:</h3>
       <div class="form-group mt-3">
         <label for="exampleInputPassword1">name</label>
         <input
-          formControlName="name"
+          [(ngModel)]="users.name"
+          name="name"
           type="text"
           class="form-control"
           id="exampleInputPassword1"
@@ -14,59 +15,86 @@
         />
       </div>
       <div class="form-group mt-3">
-        <label for="exampleInputPassword1">surname</label>
+        <label for="exampleInputPassword1">username</label>
         <input
-          formControlName="surname"
+          [(ngModel)]="users.username"
+          name="username"
           type="text"
           class="form-control"
           id="exampleInputPassword1"
-          placeholder="Type a surname.."
+          placeholder="Type a username.."
         />
       </div>
       <div class="form-group mt-3">
         <label for="exampleInputPassword1">street</label>
         <input
-          formControlName="street"
+          [(ngModel)]="users.address.street"
+          name="street"
           type="text"
           class="form-control"
           id="exampleInputPassword1"
           placeholder="Type a street.."
         />
-        <div class="form-group mt-3">
-          <label for="exampleInputPassword1">suite</label>
-          <input
-            formControlName="suite"
-            type="text"
-            class="form-control"
-            id="exampleInputPassword1"
-            placeholder="Type a suite.."
-          />
-          <div class="form-group mt-3">
-            <label for="exampleInputPassword1">city</label>
-            <input
-              formControlName="city"
-              type="text"
-              class="form-control"
-              id="exampleInputPassword1"
-              placeholder="Type a city.."
-            />
-            <div class="form-group mt-3">
-              <label for="exampleInputPassword1">zipcode</label>
-              <input
-                formControlName="zipcode"
-                type="text"
-                class="form-control"
-                id="exampleInputPassword1"
-                placeholder="Type a zipcode.."
-              />
-            </div>
-          </div>
-        </div>
       </div>
+      <div class="form-group mt-3">
+        <label for="exampleInputPassword1">suite</label>
+        <input
+          [(ngModel)]="users.address.suite"
+          name="suite"
+          type="text"
+          class="form-control"
+          id="exampleInputPassword1"
+          placeholder="Type a suite.."
+        />
+      </div>
+      <div class="form-group mt-3">
+        <label for="exampleInputPassword1">city</label>
+        <input
+          [(ngModel)]="users.address.city"
+          name="city"
+          type="text"
+          class="form-control"
+          id="exampleInputPassword1"
+          placeholder="Type a city.."
+        />
+      </div>
+      <div class="form-group mt-3">
+        <label for="exampleInputPassword1">zipcode</label>
+        <input
+          [(ngModel)]="users.address.zipcode"
+          name="zipcode"
+          type="text"
+          class="form-control"
+          id="exampleInputPassword1"
+          placeholder="Type a zipcode.."
+        />
+      </div>
+      <div class="form-group mt-3">
+        <label for="exampleInputPassword1">latitude:</label>
+        <input
+          [(ngModel)]="users.address.geo.lat"
+          name="lat"
+          type="text"
+          class="form-control mb-2"
+          id="exampleInputPassword1"
+          placeholder="Type a lat.."
+        />
+        <label for="exampleInputPassword1">longitude:</label>
+        <input
+          [(ngModel)]="users.address.geo.lng"
+          name="lng"
+          type="text"
+          class="form-control"
+          id="exampleInputPassword1"
+          placeholder="Type a long.."
+        />
+      </div>
+
       <div class="form-group mt-3">
         <label for="exampleInputEmail1">Email address</label>
         <input
-          formControlName="email"
+          [(ngModel)]="users.email"
+          name="email"
           type="email"
           class="form-control"
           id="exampleInputEmail1"
@@ -102,7 +130,7 @@
         <tr *ngFor="let user of users">
           <th scope="row">{{ user.id }}</th>
           <td class="col">{{ user.name }}</td>
-          <td class="col">{{ user.surname }}</td>
+          <td class="col">{{ user.username }}</td>
           <td class="col">{{ user.email }}</td>
           <td class="col">{{ user.address.street }}</td>
           <td class="col">{{ user.address.suite }}</td>

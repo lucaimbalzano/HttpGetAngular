@@ -3,6 +3,7 @@ import { address } from "./address";
 export class user{
     public id: number;
     public name: string;
+    public username :string;
     public email: string;
     public address: address;
 }
