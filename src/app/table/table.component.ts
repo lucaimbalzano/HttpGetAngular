@@ -1,6 +1,6 @@
+import { Users } from './../services/crud-service.model';
 import { Component, OnInit } from '@angular/core';
 import { CrudServiceService } from '../services/crud-service.service';
-import { user } from '../user';
 
 @Component({
   selector: 'app-table',
@@ -9,19 +9,19 @@ import { user } from '../user';
 })
 export class TableComponent implements OnInit {
 
-  constructor(private crudService : CrudServiceService) { }
+  users : Users;
 
-  users : user;
+  constructor(private _crudService : CrudServiceService) { }
+
   ngOnInit(): void {
     this.retrieveData();
   }
 
   retrieveData(): void {
-    this.crudService.getAll()
+    this._crudService.getAll()
       .subscribe(
-        data=> {
+        data => {
           this.users = data;
-          console.log(data);
         },
         error => {
           console.log(error);
