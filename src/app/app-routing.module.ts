@@ -6,7 +6,8 @@ import { TableComponent } from './table/table.component';
 const routes: Routes = [
   {path:'table', component: TableComponent},
   {path:'dashboard', component: DashboardComponent},
-  {path: '', redirectTo: '/dashboard' , pathMatch: 'full' }
+  {path: '', redirectTo: '/dashboard' , pathMatch: 'full' },
+  { path: '**', redirectTo: '/table'}
 ];
 
 @NgModule({

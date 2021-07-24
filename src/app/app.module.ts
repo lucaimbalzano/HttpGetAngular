@@ -13,7 +13,7 @@ import { AddUserComponent } from './add-user/add-user.component';
     AppComponent,
     TableComponent,
     DashboardComponent,
-    AddUserComponent
+    AddUserComponent,
   ],
   imports: [
     BrowserModule,
