@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudServiceService } from '../services/crud-service.service';
 import { user } from '../user';
-import { Form, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-table',
@@ -10,23 +9,11 @@ import { Form, FormBuilder, FormGroup } from '@angular/forms';
 })
 export class TableComponent implements OnInit {
 
-  constructor(private crudService : CrudServiceService, private formBuilder : FormBuilder) { }
+  constructor(private crudService : CrudServiceService) { }
 
   users : user;
-  usersAdded:user[];
-
-  formValue ! : FormGroup;
-
   ngOnInit(): void {
     this.retrieveData();
-    this.formValue = this.formBuilder.group({
-      name  : [''],
-      surname : [''],
-      email : [''],
-      street : [''],
-      city: [''],
-      zipcode: ['']
-       })
   }
 
   retrieveData(): void {
@@ -40,11 +27,6 @@ export class TableComponent implements OnInit {
           console.log(error);
         }
       );
-  }
-
-  createUser(): void{
-    this.crudService.createUser()
-      
   }
 
 }
