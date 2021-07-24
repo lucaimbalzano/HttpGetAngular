@@ -21,13 +21,3 @@ export class address{
 //         "lng": "81.1496"
 //       }
     
-
-
-// firstName: ['', Validators.required],
-// lastName: [''],
-// address: this.fb.group({
-//   street: [''],
-//   city: [''],
-//   state: [''],
-//   zip: ['']
-// }),
